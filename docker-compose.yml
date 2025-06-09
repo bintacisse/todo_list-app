@@ -1,36 +1,47 @@
 version: '3.8'
 
 services:
-  backend:
-    build: ./backend
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./backend:/app
-    networks:
-      - todonet
-
+  # Frontend Service
   frontend:
-    build: ./frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8080:80"
-    networks:
-      - todonet
+      - "80:80"
+    depends_on:
+      - api
+    restart: unless-stopped
 
-  db:
-    image: mysql:8
+  # Backend API Service
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: tododb
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-    volumes:
-      - db_data:/var/lib/mysql
-    networks:
-      - todonet
+      - NODE_ENV=production
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=todolist
+    restart: unless-stopped
 
-networks:
-  todonet:
+  # PostgreSQL Database
+  db:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=todolist
+    restart: unless-stopped
 
 volumes:
-  db_data:
+  postgres_data:
