@@ -26,8 +26,7 @@ Responsable Infrastructure : Binta Cisse, Elh Souleymance Dia, Papa Abdoulaye Mb
 - Filtrage des tâches par statut (terminées, actives, toutes)
 - Tri des tâches par date d'échéance, priorité, ou date de création
 - Recherche de tâches par titre ou description
-- Interface responsive adaptée à tous les appareils
-- Mode sombre/clair
+
 
 ## Architecture
 
@@ -85,7 +84,18 @@ npm run dev
 │   ├── hooks/              # Hooks personnalisés
 │   ├── types/              # Types TypeScript
 │   └── utils/              # Fonctions utilitaires
+
+
 ├── Dockerfile              # Configuration Docker pour le frontend
 ├── docker-compose.yml      # Configuration Docker Compose
-└── nginx.conf              # Configuration Nginx
-```
+
+##Technologies utilisees
+
+Backend	Python 
+Frontend	HTML 
+Base de données	MySQL / PostgreSQL
+Serveur Web	Nginx 
+Conteneurisation	Docker
+Orchestration	Docker Compose
+Versioning	Git
+
