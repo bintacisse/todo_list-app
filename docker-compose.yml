@@ -9,8 +9,8 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - api
-    restart: unless-stopped
+      - .api
+    
 
   # Backend API Service
   api:
@@ -26,9 +26,9 @@ services:
       - DB_HOST=db
       - DB_PORT=5432
       - DB_USER=postgres
-      - DB_PASSWORD=postgres
+      - DB_PASSWORD=root
       - DB_NAME=todolist
-    restart: unless-stopped
+  
 
   # PostgreSQL Database
   db:
@@ -41,7 +41,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_DB=todolist
-    restart: unless-stopped
+
 
 volumes:
   postgres_data:
