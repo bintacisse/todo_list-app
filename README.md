@@ -40,15 +40,21 @@ todo-list-app/
 │   ├── app.py
 │   ├── requirements.txt
 │   └── Dockerfile
+
+
 ├── frontend/
 │   ├── index.html
 │   ├── styles.css
 │   └── Dockerfile
+
+
 ├── infrastructure/
 │   ├── nginx/
 │   │   └── nginx.conf
 │   └── db/
 │       └── init.sql
+
+
 └── docker-compose.yml
 
 ## Démarrage
@@ -60,7 +66,7 @@ todo-list-app/
 ### Installation et lancement
 
 1. Clonez ce dépôt
-   git clone https://github.com/binta.cisse/master2/todo_list-app.git
+   git clone https://github.com/binta.cisse/todo_list-app.git
 2. Depuis la racine du projet, déplacer dans le répertoire todo_list-app
   cd C:\Users\binta.cisse\master2\todo_list-app
 3.  exécutez la commande
