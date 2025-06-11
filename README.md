@@ -35,6 +35,22 @@ Responsable Infrastructure : Binta Cisse, Elh Souleymance Dia, Papa Abdoulaye Mb
 - **Base de données**: PostgreSQL
 - **Déploiement**: Docker et Docker Compose
 
+todo-list-app/
+├── backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   └── Dockerfile
+├── infrastructure/
+│   ├── nginx/
+│   │   └── nginx.conf
+│   └── db/
+│       └── init.sql
+└── docker-compose.yml
+
 ## Démarrage
 
 ### Prérequis
@@ -44,13 +60,14 @@ Responsable Infrastructure : Binta Cisse, Elh Souleymance Dia, Papa Abdoulaye Mb
 ### Installation et lancement
 
 1. Clonez ce dépôt
-2. Depuis la racine du projet, exécutez:
-
+   git clone https://github.com/binta.cisse/master2/todo_list-app.git
+2. Depuis la racine du projet, déplacer dans le répertoire todo_list-app
+  cd C:\Users\binta.cisse\master2\todo_list-app
+3.  exécutez la commande
 ```bash
-docker-compose up -d
+docker-compose up --build 
 ```
-
-L'application sera accessible à l'adresse `http://localhost`.
+L'application sera accessible à l'adresse http://localhost:8080.
 
 ## Développement
 
@@ -71,25 +88,7 @@ npm install
 npm run dev
 ```
 
-## Structure du projet
-
-```
-/
-├── api/                    # Backend API
-│   ├── src/                # Code source du backend
-│   ├── Dockerfile          # Configuration Docker pour le backend
-│   └── package.json        # Dépendances du backend
-├── src/                    # Code source du frontend
-│   ├── components/         # Composants React
-│   ├── hooks/              # Hooks personnalisés
-│   ├── types/              # Types TypeScript
-│   └── utils/              # Fonctions utilitaires
-
-
-├── Dockerfile              # Configuration Docker pour le frontend
-├── docker-compose.yml      # Configuration Docker Compose
-
-##Technologies utilisees
+## Technologies utilisées
 
 Backend	Python 
 Frontend	HTML 
