@@ -71,7 +71,7 @@ todo-list-app/
   cd C:\Users\binta.cisse\master2\todo_list-app
 3.  exécutez la commande
 ```bash
-docker-compose up --build 
+docker-compose up --build -d
 ```
 L'application sera accessible à l'adresse http://localhost:8080.
 
