@@ -1,0 +1,9 @@
+
+# Utilise l'image officielle nginx
+FROM nginx:alpine
+
+# Copie la page HTML dans nginx
+COPY index.html /usr/share/nginx/html/index.html
+
+# Exposer le port 80 (port de Nginx)
+EXPOSE 80
